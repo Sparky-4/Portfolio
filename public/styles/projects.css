@@ -1,0 +1,81 @@
+.gridContainer{
+    padding: 5vh 10vh 0em 10vh;
+    text-align: center;
+    background-color: #252A34;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10vh 10vh 15vh 10vh;
+    font-size: 5vh;
+    font-weight: 500;
+    color: #EAEAEA;
+}
+
+.break{
+    border-bottom: 5px solid #08D9D6;
+    padding-top: 2vh;
+    width: 4vw;
+    transition-duration: .5s;
+}
+
+.break:hover{
+    transition-duration: .5s;
+    width: 6vw;
+}
+
+#projects{
+    display: grid;
+    grid-template-rows: repeat(4, minmax(15vw, 15vw));
+    grid-template-columns: repeat(auto-fit, minmax(25vw, 25vw));
+    justify-content: center;
+    row-gap: 5vw;
+    column-gap: 5vw;
+}
+
+.itemContainer{
+    color: #EAEAEA;
+    font-size: larger;
+    font-weight: 500;
+}
+
+.item{
+    background-color: #FF2E63;
+    color: white;
+}
+
+.inner{
+    background-color: #252A34;
+}
+
+.item img{
+    width: 25vw;
+    height: 15vw;
+    cursor: pointer;
+}
+
+.itemContainer:hover{
+    transform: scale(1.2);
+    font-size: xx-large;
+}
+
+.item:hover{
+    transform: rotate(20deg);
+    transition-duration: .2s;
+}
+.inner:hover{
+    transition-duration: .2s;
+    transform: rotate(-10deg);
+    background-color: #08D9D6;
+}
+.item img:hover{
+    transition-duration: .2s;
+    transform: rotate(-10deg);
+}
+
+.itemContainer label{
+    position: relative;
+    z-index: 99;
+}
