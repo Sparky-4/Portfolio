@@ -48,7 +48,7 @@ nav{
 }
 
 .icon:hover{
-    transform: scale(1.2) rotate(-30deg);
+    transform: scale(1.2);
     transition-duration: .2s;
 }
 
@@ -115,8 +115,8 @@ h1{
 }
 
 .text::before{
-    animation: show 3s;
-    animation-delay: 1s;
+    animation: show 1s;
+    animation-delay: .5s;
     opacity: 0;
     content: "I write code";
     animation-fill-mode: forwards;

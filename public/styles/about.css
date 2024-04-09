@@ -1,3 +1,18 @@
+#aboutSection{
+    background-color: #EAEAEA;
+}
+
+.header2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10vh 10vh 0vh 10vh;
+    width: min-content;
+    font-size: 5vh;
+    font-weight: 500;
+    color: #252A34;
+}
+
 #aboutArea{
     display: flex;
     width: 100%;
@@ -5,7 +20,6 @@
     padding: 10vh 0 10vh 0;
     justify-content:space-around;
     align-items: center;
-    background-color: #EAEAEA;
 }
 
 .aboutContainer{
