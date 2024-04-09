@@ -1,0 +1,57 @@
+#aboutArea{
+    display: flex;
+    width: 100%;
+    height: 90vh;
+    padding: 10vh 0 10vh 0;
+    justify-content:space-around;
+    align-items: center;
+    background-color: #EAEAEA;
+}
+
+.aboutContainer{
+    background-color: #08D9D6;
+    transform: rotate(20deg);
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    padding: 5vh;
+    height: fit-content;
+    font-size:xx-large;
+    background-color: #252A34;
+    color: #EAEAEA;
+    transition-duration: .2s;
+    transform: rotate(-20deg);
+}
+
+.aboutContainer h1{
+    transform: rotate(-30deg);
+    font-size: 10vh;
+    font-family: "Permanent Marker", cursive;
+    color: #252A34;
+    padding-bottom: 5vh;
+}
+
+.about:hover{
+    background-color: #FF2E63;
+    color: #252A34;
+}
+
+#imgContainer{
+    background-color: #FF2E63;
+    transform: rotate(-20deg);
+}
+
+#imgContainer img{
+    transform: rotate(20deg) scale(.8);
+    border-radius: 50%;
+    height: 50vh;
+    width: 50vh;
+    transition-duration: .3s;
+}
+
+#imgContainer img:hover{
+    transform: rotate(10deg) scale(1);
+    border-radius: 20%;
+}

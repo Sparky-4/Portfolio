@@ -52,6 +52,11 @@ nav{
     transition-duration: .2s;
 }
 
+.navLink{
+    width: 2vw;
+    height: 2vw;
+}
+
 h1{
     margin: 0;
     color: white;
@@ -67,9 +72,8 @@ h1{
 }
 
 .mainContainer{
-    background-color: transparent;
+    background-color: #08D9D6;
     padding: 10vh;
-    border: 2px solid #08D9D6;
     transition-duration: .5s;
     transform: rotate(20deg);
 }
@@ -81,21 +85,22 @@ h1{
     padding: 20vh;
     height: fit-content;
     font-size: xx-large;
-    background-color: #FF2E63;
-    color: #252A34;
+    background-color: #252A34;
+    color: #FF2E63;
     transition-duration: .5s;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .mainContainer:hover{
     transition-duration: .5s;
-    background-color: #08D9D6;
+    background-color: #252A34;
 }
 
 .mainBox:hover{
     transition-duration: .5s;
-    transform: rotate(20deg);
-    background-color: #252A34;
-    color: #FF2E63;
+    transform: rotate(20deg) scale(.5);
+    background-color: #FF2E63;
+    color: #252A34;
 }
 
 @keyframes fromRight{

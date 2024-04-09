@@ -4,11 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/projects.css">
+  <link rel="stylesheet" href="styles/about.css">
   <title>Yash Anand Portfolio</title>
 </head>
 
@@ -18,7 +22,9 @@
             <img class="icon" src="images/logo.png" onclick="location.href='index.html'">
             <button class="navButton" onClick="toAbout()">about</button>
             <button class="navButton" onClick="toProjects()">projects</button>
-            <button class="navButton" >resume</button>
+            <a href="https://github.com/Sparky-4"><img class="navLink" src="images/github.png"></a>
+            <a href="https://www.linkedin.com/in/yash-anand-67978525a/"><img class="navLink" src="images/linkedin-logo.png"></a>
+            <a href="mailto:someone@example.com"><img class="navLink" src="images/email.png"></a>
         </nav>
         <div id="main">
             <div class="mainContainer">
@@ -30,7 +36,7 @@
         </div>
     </div>
     <div id="projectArea" class="gridContainer">
-        <div class="header">projects<div class="break"></div></div>
+        <div class="header">Projects<div class="break"></div></div>
         <div id="projects">
             <div class="itemContainer">
                 <div class="item" onclick="window.open('https://super-yash-bros.netlify.app/','_blank');"><div class="inner"></div><div class="inner"><img src="images/super-yash-bros.PNG"></div></div>
@@ -65,7 +71,7 @@
                 <label>Breakout</label>
             </div>
             <div class="itemContainer">
-                <div class="item" onclick="window.open('https://main--flappy-b1rd.netlify.app/','_blank');"><div class="inner"><img src="images/flappy.PNG"></div></div>
+                <div class="item" onclick="window.open('https://flappy-b1rd.netlify.app/','_blank');"><div class="inner"><img src="images/flappy.PNG"></div></div>
                 <label>Flappity Bird</label>
             </div>
             <div class="itemContainer">
@@ -79,7 +85,25 @@
         </div>
     </div>
     <div id="aboutArea">
-
+        <div id="imgContainer">
+            <img src="images/me-close.jpg">
+        </div>
+        <div class="aboutContainer">
+            <h1>
+                Hi there!
+            </h1>
+            <div class="about">
+                <p>
+                    My name is Yash Anand, and <br>
+                    I am a student at Rose-Hulman <br>
+                    pursuing a bachelor's in Computer <br>
+                    Science with a minor in AI and a <br>
+                    master's in Engineering Management. <br>
+                    I love coding games, websites, and <br>
+                    all sorts of applications. 
+                </p>
+            </div>
+        </div>
     </div>
    
 <script>
