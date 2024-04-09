@@ -16,9 +16,9 @@
     <div class="top">
         <nav>
             <img class="icon" src="images/logo.png" onclick="location.href='index.html'">
-            <button class="navButton" href="">about</button>
-            <button class="navButton" onClick="go()">projects</button>
-            <button class="navButton" href="">resume</button>
+            <button class="navButton" onClick="toAbout()">about</button>
+            <button class="navButton" onClick="toProjects()">projects</button>
+            <button class="navButton" >resume</button>
         </nav>
         <div id="main">
             <div class="mainContainer">
@@ -78,12 +78,20 @@
             </div>
         </div>
     </div>
+    <div id="aboutArea">
+
+    </div>
    
 <script>
-    let e = document.getElementById("projectArea");
-    function go(){
-        console.log("scrolling")
-        e.scrollIntoView();
+    let proj = document.getElementById("projectArea");
+    let about = document.getElementById("aboutArea");
+
+    function toProjects(){
+        proj.scrollIntoView();
+    }
+
+    function toAbout(){
+        about.scrollIntoView();
     }
 </script>
 </body>
