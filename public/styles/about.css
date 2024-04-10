@@ -1,5 +1,8 @@
 #aboutSection{
     background-color: #EAEAEA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header2{
@@ -7,7 +10,6 @@
     flex-direction: column;
     align-items: center;
     padding: 10vh 10vh 0vh 10vh;
-    width: min-content;
     font-size: 5vh;
     font-weight: 500;
     color: #252A34;
