@@ -21,8 +21,11 @@
     transition-duration: .5s;
 }
 
-.break:hover{
-    transition-duration: .5s;
+.header:hover .break{
+    width: 6vw;
+}
+
+.header2:hover .break{
     width: 6vw;
 }
 
