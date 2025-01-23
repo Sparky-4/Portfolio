@@ -123,11 +123,11 @@ h1{
 
 @keyframes fromRight{
     0%{
-        transform: translate(50vw) rotate(50deg);
+        transform: rotate(50deg);
         opacity: 0;
     }
     100%{
-        transform: translate(0vw) rotate(-20deg);
+        transform: rotate(-20deg);
         opacity: 1;
     }
 }
