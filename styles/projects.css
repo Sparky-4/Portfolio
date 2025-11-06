@@ -7,7 +7,7 @@
 .header{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;    
     margin: 10vh 10vh 15vh 10vh;
     font-size: 5vh;
     font-weight: 500;
@@ -81,4 +81,79 @@
 .itemContainer label{
     position: relative;
     z-index: 99;
+}
+
+/* -----------------------------------------------------
+   Mobile-first base overrides and responsive breakpoints
+   ----------------------------------------------------- */
+
+/* Base: mobile */
+.gridContainer{
+    padding: 4vh 4vh 6vh 4vh;
+}
+
+.header{
+    margin: 6vh 4vh 8vh 4vh;
+    font-size: 3.5vh;
+}
+
+.break{
+    width: 40px;
+}
+
+#projects{
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    row-gap: 4vh;
+    column-gap: 0;
+}
+
+.item img{
+    width: 100%;
+    height: auto;
+}
+
+/* Tablet */
+@media (min-width: 600px){
+    #projects{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 4vh;
+        column-gap: 4vh;
+    }
+    .header{
+        font-size: 4.25vh;
+    }
+    .break{
+        width: 60px;
+    }
+}
+
+/* Desktop: restore original desktop sizing */
+@media (min-width: 900px){
+    .gridContainer{
+        padding: 5vh 10vh 10vh 10vh;
+    }
+    .header{
+        margin: 10vh 10vh 15vh 10vh;
+        font-size: 5vh;
+    }
+    .break{
+        width: 4vw;
+    }
+    .header:hover .break{
+        width: 6vw;
+    }
+    .header2:hover .break{
+        width: 6vw;
+    }
+    #projects{
+        grid-template-rows: repeat(4, minmax(15vw, 15vw));
+        grid-template-columns: repeat(auto-fit, minmax(25vw, 25vw));
+        row-gap: 5vw;
+        column-gap: 5vw;
+    }
+    .item img{
+        width: 25vw;
+        height: 15vw;
+    }
 }
