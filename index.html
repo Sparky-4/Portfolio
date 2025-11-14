@@ -26,7 +26,30 @@
             <a href="https://github.com/Sparky-4"><img class="navLink" src="images/github.png"></a>
             <a href="https://www.linkedin.com/in/yash-anand-67978525a/"><img class="navLink" src="images/linkedin-logo.png"></a>
             <a href="mailto:anandy@rose-hulman.edu"><img class="navLink" src="images/email.png"></a>
+            <button id="hamburger" class="hamburger" aria-label="Open navigation menu" aria-expanded="false" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
+        <div id="mobileMenu" class="mobileMenu" aria-hidden="true">
+            <div class="mobileMenuContent">
+                <button class="closeMobileMenu" aria-label="Close navigation menu" onclick="toggleMobileMenu(false)">
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="mobileMenuLinks">
+                    <button class="navButton" onClick="toAbout()">about<p></p></button>
+                    <button class="navButton" onClick="toProjects()">projects<p></p></button>
+                    <a class="navButton" href="https://drive.google.com/file/d/1IJie-WOulVgNDYV2Ob9bbe4YbYjdO8p1/view?usp=sharing" target="_blank" rel="noopener">resume<p></p></a>
+                </div>
+                <div class="mobileSocial">
+                    <a href="https://github.com/Sparky-4"><img class="navLink" src="images/github.png" alt="GitHub"></a>
+                    <a href="https://www.linkedin.com/in/yash-anand-67978525a/"><img class="navLink" src="images/linkedin-logo.png" alt="LinkedIn"></a>
+                    <a href="mailto:anandy@rose-hulman.edu"><img class="navLink" src="images/email.png" alt="Email"></a>
+                </div>
+            </div>
+        </div>
         <div id="main">
             <div class="mainContainer">
                 <div class="mainBox">
@@ -50,6 +73,10 @@
             <div class="itemContainer">
                 <div class="item" onclick="window.open('https://number-neural-network.netlify.app/','_blank');"><div class="inner"></div><div class="inner"><img src="images/neural.PNG"></div></div>
                 <label>Neural Network</label>
+            </div>
+            <div class="itemContainer">
+                <div class="item" onclick="window.open('https://restored-remembered.netlify.app/','_blank');"><div class="inner"></div><div class="inner"><img src="images/restored.jpg"></div></div>
+                <label>Restored & Remembered</label>
             </div>
             <div class="itemContainer">
                 <div class="item" onclick="window.open('https://super-yash-bros.netlify.app/','_blank');"><div class="inner"></div><div class="inner"><img src="images/super-yash-bros.PNG"></div></div>
@@ -117,13 +144,52 @@
 <script>
     let proj = document.getElementById("projectArea");
     let about = document.getElementById("aboutSection");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const hamburger = document.getElementById("hamburger");
 
     function toProjects(){
+        closeMobileMenu();
         proj.scrollIntoView();
     }
 
     function toAbout(){
+        closeMobileMenu();
         about.scrollIntoView();
     }
+
+    function toggleMobileMenu(forceState){
+        if(!mobileMenu || !hamburger){
+            return;
+        }
+        const shouldOpen = typeof forceState === "boolean" ? forceState : !mobileMenu.classList.contains("open");
+        mobileMenu.classList.toggle("open", shouldOpen);
+        document.body.classList.toggle("menu-open", shouldOpen);
+        hamburger.setAttribute("aria-expanded", shouldOpen);
+        mobileMenu.setAttribute("aria-hidden", !shouldOpen);
+    }
+
+    function closeMobileMenu(){
+        toggleMobileMenu(false);
+    }
+
+    if(mobileMenu){
+        mobileMenu.addEventListener("click", (event) => {
+            if(event.target === mobileMenu){
+                closeMobileMenu();
+            }
+        });
+    }
+
+    window.addEventListener("resize", () => {
+        if(window.innerWidth > 900){
+            closeMobileMenu();
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if(event.key === "Escape"){
+            closeMobileMenu();
+        }
+    });
 </script>
 </body>

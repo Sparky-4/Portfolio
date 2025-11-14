@@ -1,5 +1,6 @@
 html {
     scroll-behavior: smooth;
+    /* overflow-x: hidden; */
 }
 
 body{
@@ -8,6 +9,17 @@ body{
     font-weight: 700;
     font-style: normal;
     overflow-x: hidden;
+}
+
+body.menu-open{
+    overflow: hidden;
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .top{
@@ -24,6 +36,7 @@ nav{
     align-items: center;
     padding: 1em 4em 0em 4em;
     gap: 1em;
+    position: relative;
 }
 
 .navButton{
@@ -73,6 +86,124 @@ nav{
 .navLink{
     width: 2vw;
     height: 2vw;
+}
+
+.hamburger{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 6px;
+    border: none;
+    background: transparent;
+    padding: .75rem;
+    cursor: pointer;
+    transition: opacity .2s ease;
+    margin-left: auto;
+    margin-right: 4em;
+}
+
+.hamburger span{
+    width: 32px;
+    height: 3px;
+    background-color: #252A34;
+    transition: transform .3s ease, opacity .3s ease;
+}
+
+.hamburger:hover{
+    opacity: .7;
+}
+
+.mobileMenu{
+    position: fixed;
+    inset: 0;
+    background-color: #050608;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .4s ease;
+    z-index: 999;
+}
+
+.mobileMenu.open{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobileMenuContent{
+    position: relative;
+    width: min(500px, 90vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.mobileMenu.open .mobileMenuContent{
+    animation: slideDown .4s ease forwards;
+}
+
+.closeMobileMenu{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background: transparent;
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.closeMobileMenu span{
+    width: 28px;
+    height: 3px;
+    background-color: #EAEAEA;
+    display: block;
+}
+
+.closeMobileMenu span:first-child{
+    transform: rotate(45deg) translateY(6px);
+}
+
+.closeMobileMenu span:last-child{
+    transform: rotate(-45deg) translateY(-6px);
+}
+
+.mobileMenuLinks{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.mobileMenuLinks .navButton{
+    background-color: transparent;
+    color: #EAEAEA;
+    font-size: 1.5rem;
+    border: none;
+}
+
+.mobileMenuLinks .navButton p{
+    border: none;
+    width: 0;
+}
+
+.mobileSocial{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.mobileSocial .navLink{
+    width: 40px;
+    height: 40px;
 }
 
 h1{
@@ -150,6 +281,17 @@ h1{
     }
 }
 
+@keyframes slideDown{
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 1vw;
@@ -168,4 +310,83 @@ h1{
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #FF2E63; 
+}
+
+@media (max-width: 900px) {
+    nav{
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em 1.25em 0 1.25em;
+        gap: 0;
+        width: 100%;
+        position: relative;
+    }
+
+    nav .navButton,
+    nav .navLink{
+        display: none;
+    }
+
+    .hamburger{
+        display: flex;
+        margin-left: auto;
+        padding: .5rem;
+        margin-right: 1.25em;
+    }
+
+    .icon{
+        width: 70px;
+        height: 70px;
+        margin: 0;
+    }
+
+    .navButton{
+        font-size: 1rem;
+    }
+
+    .navLink{
+        width: 32px;
+        height: 32px;
+    }
+
+    #main{
+        height: auto;
+        padding: 8vh 0 10vh 0;
+    }
+
+    .mainContainer{
+        padding: 6vh 1.5rem;
+        margin: 0;
+        transform: none;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .mainBox{
+        padding: 4vh 2vh;
+        font-size: 2rem;
+        text-align: center;
+        align-items: center;
+        transform: none;
+        width: 100%;
+        box-sizing: border-box;
+        animation: none;
+    }
+
+    .mainBox:hover{
+        transform: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .mainContainer{
+        margin: 0 1rem;
+        padding: 4vh 1vh;
+    }
+
+    .mainBox{
+        font-size: 1.5rem;
+        padding: 3vh 1vh;
+    }
 }

@@ -82,3 +82,55 @@
     position: relative;
     z-index: 99;
 }
+
+@media (max-width: 900px) {
+    .gridContainer{
+        padding: 5vh 1.5rem 8vh 1.5rem;
+    }
+
+    .header{
+        margin: 6vh 0 8vh 0;
+        font-size: clamp(2rem, 8vw, 2.75rem);
+    }
+
+    .break{
+        width: 20vw;
+    }
+
+    #projects{
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: none;
+        row-gap: 2.5rem;
+        column-gap: 0;
+    }
+
+    .item img{
+        width: 100%;
+        height: auto;
+    }
+
+    .itemContainer{
+        font-size: 1.2rem;
+    }
+
+    .itemContainer:hover{
+        transform: none;
+        font-size: 1.2rem;
+    }
+
+    .item:hover,
+    .inner:hover,
+    .item img:hover{
+        transform: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .header{
+        margin: 4vh 0 6vh 0;
+    }
+
+    .break{
+        width: 40vw;
+    }
+}
