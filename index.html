@@ -26,21 +26,7 @@
             <a href="https://github.com/Sparky-4"><img class="navLink" src="images/github.png"></a>
             <a href="https://www.linkedin.com/in/yash-anand-67978525a/"><img class="navLink" src="images/linkedin-logo.png"></a>
             <a href="mailto:anandy@rose-hulman.edu"><img class="navLink" src="images/email.png"></a>
-            <!-- Mobile hamburger button -->
-            <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </nav>
-        <!-- Fullscreen mobile menu overlay -->
-        <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
-            <div class="mobile-menu-content">
-                <button class="navButton" onclick="closeMenu(); toAbout()">about<p></p></button>
-                <button class="navButton" onclick="closeMenu(); toProjects()">projects<p></p></button>
-                <a href="https://drive.google.com/file/d/1IJie-WOulVgNDYV2Ob9bbe4YbYjdO8p1/view?usp=sharing"><button class="navButton" onclick="closeMenu()">resume<p></p></button></a>
-            </div>
-        </div>
         <div id="main">
             <div class="mainContainer">
                 <div class="mainBox">
@@ -139,35 +125,5 @@
     function toAbout(){
         about.scrollIntoView();
     }
-</script>
-<script>
-    // Mobile menu toggle
-    const menu = document.getElementById('mobileMenu');
-    const toggleBtn = document.getElementById('menuToggle');
-
-    function openMenu(){
-        menu.classList.add('open');
-        menu.setAttribute('aria-hidden','false');
-        toggleBtn.setAttribute('aria-expanded','true');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeMenu(){
-        menu.classList.remove('open');
-        menu.setAttribute('aria-hidden','true');
-        toggleBtn.setAttribute('aria-expanded','false');
-        document.body.style.overflow = '';
-    }
-
-    if(toggleBtn){
-        toggleBtn.addEventListener('click', ()=>{
-            if(menu.classList.contains('open')){ closeMenu(); } else { openMenu(); }
-        });
-    }
-
-    // Close on Escape
-    document.addEventListener('keydown', (e)=>{
-        if(e.key === 'Escape' && menu.classList.contains('open')) closeMenu();
-    });
 </script>
 </body>
