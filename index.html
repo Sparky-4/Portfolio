@@ -136,17 +136,12 @@
     let proj = document.getElementById("projectArea");
     let about = document.getElementById("aboutSection");
 
-    function smoothScrollTo(el){
-        const y = el.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-
     function toProjects(){
-        smoothScrollTo(proj);
+        proj.scrollIntoView();
     }
 
     function toAbout(){
-        smoothScrollTo(about);
+        about.scrollIntoView();
     }
 </script>
 <script>
@@ -158,14 +153,14 @@
         menu.classList.add('open');
         menu.setAttribute('aria-hidden','false');
         toggleBtn.setAttribute('aria-expanded','true');
-        document.body.classList.add('no-scroll');
+        document.body.style.overflow = 'hidden';
     }
 
     function closeMenu(){
         menu.classList.remove('open');
         menu.setAttribute('aria-hidden','true');
         toggleBtn.setAttribute('aria-expanded','false');
-        document.body.classList.remove('no-scroll');
+        document.body.style.overflow = '';
     }
 
     if(toggleBtn){

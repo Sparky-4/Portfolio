@@ -254,23 +254,15 @@ nav{
     height: 100dvh;
     overflow: hidden;
     transform: translateY(-100%);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: transform .35s ease, opacity .25s ease, visibility 0s linear .25s;
+    transition: transform .35s ease;
     z-index: 1000;
 }
-/* Allow natural scroll chaining */
-.mobile-menu{ -webkit-overflow-scrolling: touch; overscroll-behavior: auto; }
+.mobile-menu{ -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
 @supports not (height: 100dvh){
     .mobile-menu{ height: 100vh; }
 }
 .mobile-menu.open{
     transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transition: transform .35s ease, opacity .25s ease;
 }
 .mobile-menu-content{
     display: flex;
@@ -296,9 +288,7 @@ nav{
 
 /* Contain horizontal overflow on small screens */
 img, video { max-width: 100%; height: auto; }
-
-/* Prevent page scroll only when menu is open */
-body.no-scroll { overflow: hidden; }
+#main, .top, .gridContainer, #aboutSection { overflow-x: clip; }
 
 /* Tablet */
 @media (min-width: 600px){

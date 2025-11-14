@@ -136,10 +136,7 @@
     }
     #aboutArea{
         flex-direction: row;
-        /* Avoid creating a nested scroll container */
-        /* Use min-height so page remains primary scroller */
-        min-height: 90vh;
-        height: auto;
+        height: 90vh;
         padding: 10vh 0 10vh 0;
         justify-content: space-around;
         align-items: center;
@@ -157,6 +154,3 @@
         width: 50vh;
     }
 }
-
-/* Ensure about containers never become their own scroller */
-#aboutSection, #aboutArea{ overflow: visible !important; }
