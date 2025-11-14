@@ -1,6 +1,5 @@
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 body{
@@ -198,21 +197,11 @@ nav{
 
 .mainContainer{
     padding: 4vh;
-    /* Remove large rotations on mobile to prevent overflow */
-    transform: none;
 }
 
 .mainBox{
     padding: 6vh;
     font-size: 1.25rem;
-    /* Avoid off-screen intro animation on mobile */
-    animation: none;
-}
-
-/* Prevent hover transforms from causing overflow on touch devices */
-@media (hover: none){
-    .mainBox:hover{ transform: none; }
-    .icon:hover{ transform: none; }
 }
 
 /* Slimmer scrollbar on mobile */
@@ -251,6 +240,7 @@ nav{
     background: rgba(37,42,52,0.98);
     display: grid;
     place-items: center;
+    width: 100vw;
     height: 100dvh;
     overflow: hidden;
     transform: translateY(-100%);
@@ -269,7 +259,7 @@ nav{
     flex-direction: column;
     align-items: center;
     gap: 1.25rem;
-    width: min(92%, 420px);
+    width: min(92vw, 420px);
     margin: 0 auto;
     box-sizing: border-box;
     padding: 2rem 0;
@@ -285,10 +275,6 @@ nav{
     box-sizing: border-box;
 }
 .mobile-menu .navButton p{ display: none; }
-
-/* Contain horizontal overflow on small screens */
-img, video { max-width: 100%; height: auto; }
-#main, .top, .gridContainer, #aboutSection { overflow-x: clip; }
 
 /* Tablet */
 @media (min-width: 600px){
@@ -343,11 +329,9 @@ img, video { max-width: 100%; height: auto; }
     }
     .mainContainer{
         padding: 10vh;
-        transform: rotate(20deg);
     }
     .mainBox{
         padding: 20vh;
         font-size: xx-large;
-        animation: fromRight 1s ease forwards;
     }
 }

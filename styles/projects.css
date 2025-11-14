@@ -113,14 +113,6 @@
     height: auto;
 }
 
-/* Disable hover-grow/rotate on touch to prevent overflow */
-@media (hover: none){
-    .itemContainer:hover{ transform: none; font-size: larger; }
-    .item:hover{ transform: none; }
-    .inner:hover{ transform: none; background-color: #252A34; }
-    .item img:hover{ transform: none; }
-}
-
 /* Tablet */
 @media (min-width: 600px){
     #projects{
